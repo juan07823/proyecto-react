@@ -1,22 +1,32 @@
-const Title =({course}) =>{
-  return(
+/Componente Title/
+const Title = ({ course }) => {
+  return (
     <>
-     <h1>{course}</h1>
-    
+      {/* Título h1 */}
+      <div>
+        <h1>{course}</h1>
+      </div>
     </>
-  );
-};
-const Course =({parts})=>{
-  return(
-  <>
-    <p>{parts[0].name} {parts[0].exercises} ejercicios</p>
-     <p>{parts[1].name} {parts[1].exercises} ejercicios</p>
-     <p>{parts[2].name} {parts[2].exercises} ejercicios</p>
-  </>
   )
 }
+
+/* Componente Course*/
+const Course = ({ parts }) => {
+  return (
+    <>
+      {/* Nombre y cantidad de ejercicios */}
+      <div>
+        <p>{parts[0].name} {parts[0].exercises} (Cantidad de ejercicios del primer objeto)</p>
+        <p>{parts[1].name} {parts[1].exercises} (Cantidad de ejercicios del segundo objeto)</p>
+        <p>{parts[2].name} {parts[2].exercises} (Cantidad de ejercicios del tercer objeto)</p>
+      </div>
+    </>
+  )
+}
+
+
 const App = () => {
-  const course = 'Half Stack application development'
+  const course = 'Half Stack application development';
   const parts = [
     {
       name: 'Fundamentals of React',
@@ -34,10 +44,10 @@ const App = () => {
 
   return (
     <div>
-      <Title course={course}/>
+      <Title course={course} />
       <Course parts={parts} />
-      
     </div>
-  );
+  )
 }
-export default App;
+
+export default App
